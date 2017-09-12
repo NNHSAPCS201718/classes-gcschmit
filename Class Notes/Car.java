@@ -24,6 +24,42 @@ public class Car
     
     
     /*
+     * Constructor:
+     *      responsible for initializing newly created objects
+     *      invoked automatically via new operator
+     *      name of the constructor must match the name of class
+     *      has no return type (not even void)
+     *      multiple constructors may be defined for a class
+     *      one constructor may call another constructor (with restrictions)
+     */
+    
+    /**
+     * Default constructor for the Car class.
+     *      Initializes the fuel efficiency to 30 mpg and the fuel in this car's
+     *      tank to 0 gallons.
+     */
+    public Car()
+    {
+        /*
+         * The "this" reserved word references the current object
+         *      (like self in Python)
+         *  Its usage is encouraged but usually not required.
+         */
+        this.fuelEfficiency = 30;
+        this.fuelInTank = 0;
+    }
+    
+    /**
+     * Constructs a new Car object with the specified fuel efficiency
+     * 
+     * @param fuelEfficiency the initial fuel efficiency, in miles per gallon,
+     *                       of this new car
+     */
+    public Car( double fuelEfficiency )
+    {
+    }
+    
+    /*
      * When defining a method, specify:
      *      the visibilty (e.g., public)
      *      the return type (e.g., void)
@@ -38,6 +74,25 @@ public class Car
      */
     public void drive( double distance )
     {
+    }
+    
+    /**
+     * Adds the specified amount of fuel to this car's tank
+     * 
+     * @param amount the amount of fuel, in gallons, to add to this car's tank
+     */
+    public void addGas( double amount )
+    {
+    }
+    
+    /**
+     * Returns the amount of fuel in this car's tank
+     * 
+     * @return the amount of fuel, in gallons, in this car's tank
+     */
+    public double getGasInTank()
+    {
+        return 0;
     }
     
     
