@@ -52,11 +52,22 @@ public class Car
     /**
      * Constructs a new Car object with the specified fuel efficiency
      * 
-     * @param fuelEfficiency the initial fuel efficiency, in miles per gallon,
+     * @param initialEfficiency the initial fuel efficiency, in miles per gallon,
      *                       of this new car
      */
-    public Car( double fuelEfficiency )
+    public Car( double initialEfficiency )
     {
+        /*
+         * If the parameter was named fuelEfficiency, it woudl "shadow" the
+         *      instance variable fuelEfficiency.
+         *  Local and parameter variables "shadow" instance variables of
+         *      the same name. In this code, fuelEfficiency would refer to
+         *      the parameter and not the instance variable.
+         *  To refer expliclty to an instance variable, use "this"
+         *  Advice: avoid this issue by giving parameters unique names!
+         */
+        this.fuelEfficiency = initialEfficiency;
+        this.fuelInTank = 0;
     }
     
     /*
@@ -74,6 +85,7 @@ public class Car
      */
     public void drive( double distance )
     {
+        this.fuelInTank -= ( distance / this.fuelEfficiency );
     }
     
     /**
@@ -83,6 +95,7 @@ public class Car
      */
     public void addGas( double amount )
     {
+        this.fuelInTank += amount;
     }
     
     /**
@@ -92,7 +105,7 @@ public class Car
      */
     public double getGasInTank()
     {
-        return 0;
+        return this.fuelInTank;
     }
     
     
