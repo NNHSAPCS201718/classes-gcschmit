@@ -48,6 +48,20 @@ public class Car
      */
     public Car( double initialEfficiency )
     {
+        /*
+         * If the parameter was named fuelEfficiency, it would "shadow" the
+         *      instance variable fuelEfficiency.
+         *  Local and parameter variable "shadow" instance variables of the
+         *      same name. In this code, fuelEfficiency would refer to the
+         *      parameter and not the instance variable.
+         *  To refer to the instance variable, use "this", which is
+         *      a reserved word that refernces the current object
+         *      (like self in Python)
+         *  I think it is good practice to use "this" almost always.
+         *  When possible, use unique parameter names
+         */
+        this.fuelEfficiency = initialEfficiency;
+        this.fuelInTank = 0;
     }
     
     /*
@@ -64,6 +78,7 @@ public class Car
      */
     public void drive( double distance )
     {
+        this.fuelInTank -= ( distance / this.fuelEfficiency );
     }
     
     /**
@@ -73,6 +88,7 @@ public class Car
      */
     public void addGas( double amount )
     {
+        this.fuelInTank += amount;
     }
     
     /**
@@ -82,7 +98,7 @@ public class Car
      */
     public double getGasInTank()
     {
-        return 0;
+        return this.fuelInTank;
     }
 }
 
