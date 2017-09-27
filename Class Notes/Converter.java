@@ -51,8 +51,87 @@ public class Converter
          *      For example: (3 / 4) evaluates to 0; (3.0 / 4) evaluates to 0.75
          */
         int dollars = pennies / PENNIES_FOR_EVERY_DOLLAR;
+        
+        /*
+         * Use the modulo (mod, remainder) operator to calcualte how many
+         *      cents remain.
+         *  
+         *  The mod opererator (%) returns the remainder of the division operation.
+         *  
+         *  It can be very useful when paired with integer division.
+         *  
+         *  Examples:
+         *      7 % 2 = 1
+         *      11 % 3 = 2
+         *      6 % 2 = 0
+         */
+        int cents = pennies % PENNIES_FOR_EVERY_DOLLAR;
+        
+        System.out.println( "Dollars: " + dollars + ", Cents: " + cents );
     }
+    
+    public static void conversionExample()
+    {
+        /*
+         * A conversion is when a data value is converted from one type
+         *      to another (e.g., int to a double, double to int, int to long).
+         *      
+         *  Widening: preserves information (e.g., int to double, int to long)
+         *  Narrowing (lossy): may lose information (e.g., double to int)
+         */
+        int dollars = 25;
+        double money = dollars; // okay; widening conversion
+        
+        //dollars = money; // compile-time error; narrowing conversion
+        
+        /*
+         * Arthimetic Promotion
+         * 
+         *  If the two operands are of different types, Java attempts to
+         *      promote one of the types (widening conversion) and then
+         *      performs the operation.
+         *  
+         *  In this example, the value 4 is promoted to a double (4.0) and
+         *      then floating-point division is performed resulting in 4.25
+         *      which is assigned to average. The local variable days is still
+         *      an int and has the value 4.
+         */
+        double miles = 17.0;
+        int days = 4;
+        double average = miles / days;
+        
+        /*
+         * This is another example of promotion.
+         * 
+         *  In this case, both miles2 and days2 are ints; so, Java doesn't
+         *      perform any promotion and, instead, performs integer division.
+         *      The result is 4.
+         *      Since average2 is a double and 4 is an int, Java promotes the value
+         *      4 to a double (4.0) and then performs the assignment.
+         */
+        int miles2 = 17;
+        int days2 = 4;
+        double average2 = miles2 / days2;
+        
+        /*
+         * A cast is the "I know what I'm doing; trust me" conversion.
+         * 
+         *  A cast can perform a narrowing conversion because we are explicitly
+         *      doing so.
+         *      
+         *  (int)(84.69) => truncate to an int (84)
+         */
+        double price = 84.69;
+        int wholeDollars = (int) price;
+
+
+    }
+    
+    
 }
+
+
+
 
 
 
