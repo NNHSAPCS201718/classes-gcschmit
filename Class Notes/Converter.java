@@ -40,6 +40,37 @@ public class Converter
         
         return lightYears;
     }
+    
+    public static void penniesToDollarsAndCents( int pennies )
+    {
+        final int PENNIES_FOR_EVERY_DOLLAR = 100;
+        
+        /*
+         * Use integer division to calculate how many whole dollars
+         *      based on the specified number of pennies.
+         *  
+         *  Integer division (like // Python) discards the remainder (truncates)
+         *      For example: ( 3 / 4 ) evaluates to 0; ( 3.0 / 4 ) evaluates to 0.75
+         */
+        int dollars = pennies / PENNIES_FOR_EVERY_DOLLAR;
+        
+        /*
+         * Use the modulo (mod, remainder) operator to calculate how many
+         *      cents remain.
+         *  
+         *  The mod (%) operator returns the remainder of the division operation.
+         *  
+         *  It can be very useful when paired with integer division.
+         *  
+         *  Examples:
+         *      7 % 2 = 1
+         *      11 % 3 = 2
+         *      6 % 2 = 0
+         */
+        int cents = pennies % PENNIES_FOR_EVERY_DOLLAR;
+        
+        System.out.println( "Dollars: " + dollars + ", Cents:" + cents );
+    }
 }
 
 
