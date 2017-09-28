@@ -124,7 +124,16 @@ public class Converter
         double price = 84.69;
         int wholeDollars = (int) price;
 
-
+        /*
+         * If we want to round a double to the nearest int value, use the
+         *      Math.round static method:
+         *      
+         *      public static long round( double value );
+         *      public static int round( float value );
+         *      
+         *  This convert 84.69 to 85
+         */
+        int nearestDollar = (int)( Math.round( price ));
     }
     
     

@@ -4,7 +4,7 @@ public class MilkJarCalculator
    {
       double milk = 5.5; // gallons
       double jarCapacity = 0.75; // gallons
-      int completelyFilledJars = milk / jarCapacity;
+      int completelyFilledJars = (int)(milk / jarCapacity);
       
       System.out.println(completelyFilledJars);
    }
