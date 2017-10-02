@@ -58,9 +58,46 @@ public class StringNotes
          *  length = 5
          */
         name = "Harry";
-        char start = name.charAt( 0 );      // returns '?'
-        char end = name.charAt( 4 );        // returns '?'
-        end = name.charAt( 
+        char start = name.charAt( 0 );              // returns 'H'
+        char end = name.charAt( 4 );                // returns 'y'
+        end = name.charAt( name.length() - 1 );     // returns 'y'
+        //char c = name.charAt( name.length());       // generates StringIndexOutOfBoundsException
+        
+        
+        /*
+         * substring
+         *      returns part of the string starting at the first index up to,
+         *          but not including, the second index
+         *      if only one index is specified, returns parts of the string
+         *          starting at the first index through the end of the string
+         *  
+         *  H   e   l   l   o   ,       W   o   r   l   d   !
+         *  0   1   2   3   4   5   6   7   8   9   10  11  12
+         *  
+         *  length = 13
+         */
+        String greeting = "Hello, World!";
+        String sub = greeting.substring( 0, 5 );            // returns "Hello"
+        sub = greeting.substring( 7, 12 );                  // returns "World"
+        sub = greeting.substring( 7 );                      // returns "World!"
+        sub = greeting.substring( 7, greeting.length());    // returns "World!"
+        //sub = greeting.substring( 7, 14 );                  // generates StringIndexOutOfBoundsException
+        
+        /*
+         * indexOf
+         *      returns the index of the start of the first occurrence of teh
+         *          specified string
+         *      if not found, returns -1
+         *  
+         *  M   i   s   s   i   s   s   i   p   p   i
+         *  0   1   2   3   4   5   6   7   8   9   10
+         *  
+         *  length = 11
+         */
+        greeting = "Mississippi";
+        int index = greeting.indexOf( "pp" );       // returns 8
+        index = greeting.indexOf( "ss" );           // returns 2
+        index = greeting.indexOf( "iii" );          // returns -1
     }
 }
 
