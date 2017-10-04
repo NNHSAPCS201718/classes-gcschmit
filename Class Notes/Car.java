@@ -109,6 +109,17 @@ public class Car
     }
     
     
+    /**
+     * Returns a String that describes this object.
+     * 
+     * @return a String that describes this object
+     */
+    public String toString()
+    {
+        String str = "fuel efficiency: " + this.fuelEfficiency +
+                "; fuel in tank: " + this.fuelInTank;
+        return str;
+    }
 }
 
 
